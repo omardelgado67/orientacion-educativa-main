@@ -59,8 +59,8 @@ public class AlumnosRepositoryTest
     [Test]
     public async Task ObtieneUnAlumnoYValidaSuNombre_200_OK()
     {
-        long numControl = 24328051051234;
-        string apellido = "Contreras";
+        long numControl = 25328051050581;
+        string apellido = "Sujoj";
 
         var repository = this.serviceProvider.GetRequiredService<AlumnosRepository>();
         var alumno = await repository.ObtenerAlumnoPorNumeroDeControl(numControl);
