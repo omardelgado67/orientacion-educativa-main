@@ -26,4 +26,10 @@ public class AlumnosRepository : Repository
 
         return alumno;
     }
+
+    public async Task ObtenerTodosLosAlumnos()
+    {
+        throw new NotImplementedException();
+    }
+
 }
