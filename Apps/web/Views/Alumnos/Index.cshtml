@@ -8,6 +8,7 @@
         <tr>
             <th>Numero de Control</th>
             <th>Alumno</th>
+            <th>Generacion</th>
             <th>Carrera</th>
             <th>Grupo</th>
             <th></th>
@@ -15,17 +16,18 @@
     </thead>
     <tbody data-bind="if: registros().length === 0">
         <tr>
-            <td colspan="5">No hay registros para mostrar</td>
+            <td colspan="6">No hay registros para mostrar</td>
         </tr>
     </tbody>
-    <tbody data-bind="if: registros().length > 0">
+    <tbody data-bind="foreach: registros">
         <tr>
-            <td>25328051050180</td>
-            <td>Delgado Vazquez Omar Emiliano</td>
-            <td>Programacion</td>
-            <td>3D</td>
+            <td data-bind="text: NumControl"></td>
+            <td data-bind="text: NombreCompleto"></td>
+            <td data-bind="text: Generacion"></td>
+            <td data-bind="text: Carrera"></td>
+            <td data-bind="text: SemestreGrupo"></td>
             <td>
-                <a href="~/alumnos/25328051050180">Ver informacion</a>
+                <a href="#" data-bind="attr: {href: '/alumnos/' + NumControl}">Ver informacion</a>
             </td>
         </tr>
     </tbody>
