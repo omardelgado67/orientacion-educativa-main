@@ -2,17 +2,77 @@
     string numControl = "";
     if(ViewData[index: "NumControl"] != null)
     {
-       string NumControl = ViewData[index: "NumControl"].ToString();
+       numControl = ViewData[index: "NumControl"].ToString();
     }
 }
 
-<h1>informacion del Alumno @numControl</h1>
-<input type="hidren" value="@numControl" />
+@section Header{
+    <link rel="stylesheet" href="~/css/credencial.css" asp-append-version="true" />
+}
+
+@section Scripts{
+    <script src="~/js/datos-alumno.js"></script>
+}
+
+<h1>informacion del Alumno</h1>
+<input type="hidden" value="@numControl" id="hidNumControl" />
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
             <!--Este es el codigo que me dio ChatGpt-->
-            
+            <div class="credencial">
+
+        <div class="encabezado">
+            <h2>INSTITUTO EDUCATIVO</h2>
+            <p>CREDENCIAL DE ESTUDIANTE</p>
+        </div>
+
+        <div class="contenido">
+
+            <span class="etiqueta">ALUMNO</span>
+
+            <!-- Cambia foto.jpg por la ruta de tu fotografía -->
+            <br>
+            <img
+                alt="Fotografía del alumno"
+                class="foto"
+            >
+
+            <h1 class="nombre" data-bind="text: nombre"></h1>
+
+            <p class="carrera">
+                Ingeniería en Sistemas Computacionales
+            </p>
+
+            <div class="datos">
+                <p>
+                    <strong>Número de control:</strong>
+                    23001234
+                </p>
+
+                <p>
+                    <strong>Semestre:</strong>
+                    5.º
+                </p>
+
+                <p>
+                    <strong>Grupo:</strong>
+                    B
+                </p>
+
+                <p>
+                    <strong>Generación:</strong>
+                    2023 - 2027
+                </p>
+            </div>
+
+        </div>
+
+        <div class="pie">
+            Credencial de ejemplo · Uso académico
+        </div>
+
+    </div>  
             <!--fin chatgpt--> 
         </div>
        

@@ -1,0 +1,85 @@
+.credencial {
+            width: 340px;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
+            border: 1px solid #ccc;
+        }
+
+        .encabezado {
+            background-color: #123c69;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        .encabezado h2 {
+            margin: 0;
+            font-size: 21px;
+        }
+
+        .encabezado p {
+            margin: 7px 0 0;
+            font-size: 12px;
+        }
+
+        .contenido {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .foto {
+            width: 115px;
+            height: 135px;
+            object-fit: cover;
+            border: 3px solid #123c69;
+            border-radius: 8px;
+            background-color: #eee;
+        }
+
+        .nombre {
+            color: #123c69;
+            font-size: 19px;
+            margin: 12px 0 5px;
+        }
+
+        .carrera {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .datos {
+            text-align: left;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .datos p {
+            margin: 5px 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 4px;
+        }
+
+        .datos strong {
+            color: #123c69;
+        }
+
+        .pie {
+            background-color: #123c69;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-size: 12px;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            background-color: #e5edf7;
+            color: #123c69;
+            border-radius: 5px;
+            padding: 5px 10px;
+           font-size: 12px;
+            margin-bottom: 12px;
+             }
