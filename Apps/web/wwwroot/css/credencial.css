@@ -1,85 +1,154 @@
 .credencial {
-            width: 340px;
-            background-color: white;
-            border-radius: 15px;
+            width: 320px;
+            background: white;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
-            border: 1px solid #ccc;
+            border: 1px solid #d6dce5;
+            box-shadow: 0 5px 18px #00000020;
         }
 
+        /* Encabezado */
         .encabezado {
-            background-color: #123c69;
+            background: #173f6b;
             color: white;
-            text-align: center;
-            padding: 20px 10px;
+            padding: 17px 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .escudo {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: white;
+            color: #173f6b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 23px;
+            font-weight: bold;
         }
 
         .encabezado h2 {
-            margin: 0;
-            font-size: 21px;
+            font-size: 16px;
+            margin-bottom: 6px;
         }
 
         .encabezado p {
-            margin: 7px 0 0;
-            font-size: 12px;
+            font-size: 10px;
+            margin-top: 3px;
         }
 
+        /* Contenido */
         .contenido {
-            padding: 20px;
-            text-align: center;
+            padding: 16px 14px;
+        }
+
+        .datos-principales {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
         }
 
         .foto {
-            width: 115px;
-            height: 135px;
+            width: 94px;
+            height: 124px;
             object-fit: cover;
-            border: 3px solid #123c69;
-            border-radius: 8px;
-            background-color: #eee;
+            border-radius: 5px;
+            border: 1px solid #ddd;
         }
 
-        .nombre {
-            color: #123c69;
-            font-size: 19px;
-            margin: 12px 0 5px;
-        }
-
-        .carrera {
-            color: #555;
-            font-size: 14px;
-            margin-bottom: 18px;
-        }
-
-        .datos {
-            text-align: left;
-            font-size: 13px;
-            line-height: 1.8;
-        }
-
-        .datos p {
-            margin: 5px 0;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 4px;
-        }
-
-        .datos strong {
-            color: #123c69;
-        }
-
-        .pie {
-            background-color: #123c69;
-            color: white;
-            text-align: center;
-            padding: 12px;
-            font-size: 12px;
+        .informacion {
+            flex: 1;
+            min-width: 0;
         }
 
         .etiqueta {
-            display: inline-block;
-            background-color: #e5edf7;
-            color: #123c69;
+            font-size: 10px;
+            color: #7c8795;
+            margin-bottom: 7px;
+        }
+
+        .valor {
+            font-size: 13px;
+            font-weight: bold;
+            color: #24415f;
+            margin-bottom: 15px;
+            overflow-wrap: anywhere;
+        }
+
+        .separador {
+            border: none;
+            border-top: 1px solid #e1e5ea;
+            margin: 14px 0;
+        }
+
+        .dato {
+            margin-bottom: 14px;
+        }
+
+        .dato .valor {
+            margin-bottom: 0;
+            color: #303b49;
+        }
+
+        /* Semestre y grupo */
+        .fila {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .cuadro {
+            flex: 1;
+            background: #edf3fc;
+            padding: 10px;
             border-radius: 5px;
-            padding: 5px 10px;
-           font-size: 12px;
-            margin-bottom: 12px;
-             }
+        }
+
+        .cuadro .valor {
+            font-size: 15px;
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+
+        /* Generación */
+        .generacion {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .generacion .valor {
+            margin-bottom: 0;
+        }
+
+        .icono-alumno {
+            text-align: center;
+            color: #24415f;
+            font-size: 24px;
+        }
+
+        .icono-alumno p {
+            font-size: 9px;
+            color: #7c8795;
+            margin-top: 3px;
+        }
+
+        /* Pie */
+        .pie {
+            background: #173f6b;
+            color: white;
+            text-align: center;
+            font-size: 9px;
+            padding: 10px 5px;
+            letter-spacing: 0.3px;
+        }
+
+        .aviso {
+            text-align: center;
+            font-size: 10px;
+            color: #b04444;
+            margin-top: 10px;
+        }

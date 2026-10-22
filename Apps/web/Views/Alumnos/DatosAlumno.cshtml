@@ -22,54 +22,87 @@
             <!--Este es el codigo que me dio ChatGpt-->
            <div class="credencial">
 
-        <div class="encabezado">
-            <p>Centro de Bachillerto Tecnologico Industrial y de Servicios No. 105</p>
-        </div>
+        <!-- Encabezado -->
+        <header class="encabezado">
+            <div class="escudo">E</div>
 
-        <div class="contenido">
+            <div>
+                <h2>Centro de Bachillerato Tecnológico Industrial y de Servicios No. 105</h2>
+            </div>
+        </header>
 
-            <span class="etiqueta">ALUMNO</span>
+        <!-- Datos del alumno -->
+        <main class="contenido">
 
-            <!-- Cambia foto.jpg por la ruta de tu fotografía -->
-            <br>
-            <img
-                alt="Fotografía del alumno"
-                class="foto"
-            >
+            <div class="datos-principales">
 
-            <h1 class="nombre" data-bind="text: nombre"></h1>
+                <!-- Coloca tu foto en la misma carpeta -->
+                <img
+                    class="foto"
+                    src="~/imagenes/alumno.jpg"
+                    alt="Fotografía del alumno"
+                >
 
-            <p class="carrera">
-                Ingeniería en Sistemas Computacionales
-            </p>
+                <div class="informacion">
+                    <p class="etiqueta">NOMBRE COMPLETO</p>
+                    <p class="valor" data-bind="text:nombre">
+                      
+                    </p>
 
-             <div class="datos">
-                <p>
-                    <strong>Número de control:</strong>
-                    23001234
-                </p>
+                    <hr class="separador">
 
-                <p>
-                    <strong>Semestre:</strong>
-                    5.º
-                </p>
+                    <p class="etiqueta">NUMERO DE CONTROL</p>
+                    <p class="valor" data-bind="text: numControl"></p>
+                </div>
 
-                <p>
-                    <strong>Grupo:</strong>
-                    B
-                </p>
-
-                <p>
-                    <strong>Generación:</strong>
-                    2023 - 2027
-                </p>
             </div>
 
-        </div>
+            <hr class="separador">
 
-        <div class="pie">
-            Credencial de ejemplo · Uso académico
-        </div>
+            <!-- Carrera -->
+            <div class="dato">
+                <p class="etiqueta">CARRERA / ESPECIALIDAD</p>
+                <p class="valor" data-bind="text: carrera"></p>
+            </div>
+
+            <!-- Semestre y grupo -->
+            <div class="fila">
+
+                <div class="cuadro">
+                    <p class="etiqueta">SEMESTRE</p>
+                    <p class="valor" data-bind="text: semestre"></p>
+                </div>
+
+                <div class="cuadro">
+                    <p class="etiqueta">GRUPO</p>
+                    <p class="valor" data-bind="text: grupo"></p>
+                </div>
+
+            </div>
+
+            <!-- Generación -->
+            <div class="generacion">
+
+                <div>
+                    <p class="etiqueta">GENERACIÓN</p>
+                    <p class="valor" data-bind="text: generacion"></p>
+                </div>
+
+                <div class="icono-alumno">
+                    &#9813;
+                    <p>ALUMNO</p>
+                </div>
+
+            </div>
+
+            <p class="aviso">Identificacion Escolar</p>
+
+        </main>
+
+        <!-- Pie de la credencial -->
+        <footer class="pie">
+           Cambiar fotografia
+        </footer>
 
     </div>
             <!--fin chatgpt--> 
