@@ -28,9 +28,12 @@ function DatosAlumnoViewModel()
         if(resp.ok){
             const alumno = await resp.json();
             console.log("alumno", alumno);
+            const generacionFin = alumno.Generacion + 3;
             self.nombre(alumno.Paterno + " " + alumno.Materno + " " + alumno.Nombre);
-            self.generacion(alumno.Generacion + "-" + alumno.Generacion + 3);
-            self.semestre(alumno.Grupo);
+            self.generacion(alumno.Generacion + "-" + generacionFin);
+            self.carrera(alumno.Carrera);
+            self.semestre(alumno.Semestre);
+            self.grupo(alumno.Grupo);
         }
     }
 }
