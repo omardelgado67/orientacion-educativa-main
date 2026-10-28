@@ -27,9 +27,17 @@ public class AlumnosRepository : Repository
         return alumno;
     }
 
-    public async Task ObtenerTodosLosAlumnos()
+    public async Task ActualizarFoto(long numControl, string nombreArchivo)
     {
-        throw new NotImplementedException();
+        await this.alumnos.UpdateOneAsync(
+            x => x.NumControl == numControl,
+            Builders<Alumno>.Update.Set(x => x.Foto, nombreArchivo));
     }
 
+    public async Task EliminarFoto(long numControl)
+    {
+        await this.alumnos.UpdateOneAsync(
+            x => x.NumControl == numControl,
+            Builders<Alumno>.Update.Set(x => x.Foto, null   ));
+    }
 }
