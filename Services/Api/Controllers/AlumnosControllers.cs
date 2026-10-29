@@ -7,6 +7,7 @@ namespace Api.Controllers;
 public class AlumnosControllers : BaseApiControllers
 {
     private readonly AlumnosRepository repository;
+    private const string FOTOS_ALUMNOS = "http://localhost:5000/fotos/alumnos/";
     public AlumnosControllers(AlumnosRepository repository)
     {
         this.repository = repository;
@@ -16,6 +17,13 @@ public class AlumnosControllers : BaseApiControllers
     public async Task<IActionResult> ListarAlumnos()
     {
        var alumnos = await this.repository.ListarTodos();
+       alumnos.ForEach(x =>
+       {
+           if (!string.IsNullOrEmpty(x.Foto))
+           {
+               x.Foto = $"{FOTOS_ALUMNOS}{x.Foto}";
+           }
+       });
        return Ok(alumnos);    
     }
 
@@ -26,7 +34,12 @@ public class AlumnosControllers : BaseApiControllers
         if(alumno == null)
         {
             return NotFound($"No existe alumno con numero de control {numControl}");
-        }  
+        }
+
+        if (!string.IsNullOrEmpty(alumno.Foto))
+        {
+            alumno.Foto = $"{FOTOS_ALUMNOS}{alumno.Foto}";
+        }
 
         return Ok(alumno);
     }
@@ -56,11 +69,20 @@ public class AlumnosControllers : BaseApiControllers
         // Validar que el archivo sea una imagen
         var archivo = this.Request.Form.Files.First();
         var contentType = archivo.ContentType;
-        
+        if (!contentType.StartsWith("image", StringComparison.OrdinalIgnoreCase))
+        {
+            return BadRequest("Debe proporcioar un archivo de imagen");
+        }
         // Almacenar el archivo
+        string extensionArchivo = System.IO.Path.GetExtension(archivo.FileName);
+
+        using var fs = new FileStream($"wwwroot/fotos/alumnos/{numControl}{extensionArchivo}", FileMode.OpenOrCreate);
+        var stream = archivo.OpenReadStream();
+        stream.CopyTo(fs);
 
         // Actualizar la foto del alumno
-        await this.repository.ActualizarFoto(numControl, "mi-foto.png");
+        await this.repository.ActualizarFoto(numControl, $"{numControl}{extensionArchivo}");
+
         return NoContent(); 
     }
 
