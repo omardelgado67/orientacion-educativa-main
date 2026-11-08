@@ -23,6 +23,10 @@ function DatosAlumnoViewModel()
        obtenerAlumno();
     };
 
+    this.eliminarFoto = async () => {
+
+    };
+
     const obtenerAlumno = async () => {
         const resp = await fetch("http://localhost:5000/alumnos/" + self.numControl());
         if(resp.ok){
@@ -34,6 +38,12 @@ function DatosAlumnoViewModel()
             self.carrera(alumno.Carrera);
             self.semestre(alumno.Semestre);
             self.grupo(alumno.Grupo);
+            if(alumno.Foto){
+                self.fotografia(alumno.Foto);
+            }
+            else{
+                self.fotografia("/imagenes/alumno.jpg");
+            }
         }
     }
 }

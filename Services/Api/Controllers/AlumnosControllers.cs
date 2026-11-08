@@ -83,7 +83,7 @@ public class AlumnosControllers : BaseApiControllers
         // Actualizar la foto del alumno
         await this.repository.ActualizarFoto(numControl, $"{numControl}{extensionArchivo}");
 
-        return NoContent(); 
+        return Ok(FOTOS_ALUMNOS + $"{numControl}{extensionArchivo}"); 
     }
 
     [HttpDelete("{numControl:long}/foto")]
