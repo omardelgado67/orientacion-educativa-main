@@ -100,11 +100,13 @@
         </main>
 
         <!-- Pie de la credencial -->
-        <footer class="pie">
-           Cambiar fotografia
-        </footer>
+        <div class="pie">
+            <button data-bind="click: abrirSelectorFoto">Cambiar fotografia</button>
+        <button data-bind="click: eliminarFoto">Eliminar fotografia</button>
 
     </div>
+    <input type="file" id="archivo"class="d-none" />
+
             <!--fin chatgpt--> 
         </div>
        
