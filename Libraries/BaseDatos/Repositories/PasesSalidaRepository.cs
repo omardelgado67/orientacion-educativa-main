@@ -36,12 +36,12 @@ e) Consultar los pases de un alumno
         await this.pases.UpdateOneAsync(
             x => x.Id == item.Id,
             Builders<PaseSalida>.Update
-            .Set(x => x.Fecha, item.Fecha)
-            .Set(x => x.Motivo, item.Motivo)
-            .Set(x => x.NombreTutor, item.NombreTutor)
-            .Set(x => x.Parentesco, item.Parentesco)
-            .Set(x => x.Telefono, item.Telefono)
-            .Set(x => x.Comentarios, item.Comentarios)
+            .Set(x => x.fecha, item.fecha)
+            .Set(x => x.motivo, item.motivo)
+            .Set(x => x.nombreTutor, item.nombreTutor)
+            .Set(x => x.parentesco, item.parentesco)
+            .Set(x => x.telefono, item.telefono)
+            .Set(x => x.comentarios, item.comentarios)
         );
     }
 

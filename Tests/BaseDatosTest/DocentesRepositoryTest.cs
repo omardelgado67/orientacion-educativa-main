@@ -49,8 +49,3 @@ public class DocentesRepositoryTest
         Assert.That(cuantosDocentes == 10, "No se trajeron todos los registros");
     }
 }
-
-internal class MongoDBSettings
-{
-    public MongoClientSettings ConnectionString { get; internal set; }
-}

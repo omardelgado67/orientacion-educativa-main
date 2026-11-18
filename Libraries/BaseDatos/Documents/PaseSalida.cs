@@ -6,14 +6,14 @@ public class PaseSalida
 {
     public ObjectId Id { get; set; }
     public long numControl { get; set; }
-    public string Carrera { get; set; } = string.Empty;
-    public int Semestre { get; set; }
-    public string Grupo { get; set; } = string.Empty;
-    public DateTime Fecha { get; set; }
-    public string Telefono { get; set; } = string.Empty;
-    public string NombreTutor { get; set; } = string.Empty;
-    public string Parentesco { get; set; } = string.Empty;
-    public string Motivo { get; set; } = string.Empty;
-    public string? Comentarios { get; set; }
+    public string carrera { get; set; } = string.Empty;
+    public int semestre { get; set; }
+    public string grupo { get; set; } = string.Empty;
+    public DateTime fecha { get; set; }
+    public string telefono { get; set; } = string.Empty;
+    public string nombreTutor { get; set; } = string.Empty;
+    public string parentesco { get; set; } = string.Empty;
+    public string motivo { get; set; } = string.Empty;
+    public string? comentarios { get; set; }
     
 }

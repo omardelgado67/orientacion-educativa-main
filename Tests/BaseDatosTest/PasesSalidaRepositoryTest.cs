@@ -9,12 +9,7 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 
 
-
-
 namespace BaseDatosTest;
-
-
-
 
 public class PaseSalidaRepositoryTest
 {
@@ -28,18 +23,12 @@ public class PaseSalidaRepositoryTest
             .Build();
 
 
-
-
         var services = new ServiceCollection();
-
-
 
 
          services.AddSingleton<IConfiguration>(configuration);
         services.Configure<MongoDBSettings>(
             configuration.GetSection("MongoDb"));
-
-
 
 
         services.AddSingleton<IMongoClient>(sp =>
@@ -49,18 +38,10 @@ public class PaseSalidaRepositoryTest
         });
 
 
-
-
         services.AddTransient<PasesSalidaRepository>();
-
-
-
 
         this.serviceProvider = services.BuildServiceProvider();
     }
-
-
-
 
     [TearDown]
     public void TearDown()
@@ -71,9 +52,6 @@ public class PaseSalidaRepositoryTest
         }
     }
 
-
-
-
     //1.Listar pases de salida para un alumno existente
     [Test]
     public async Task ListarPasesAlumno()
@@ -82,14 +60,9 @@ public class PaseSalidaRepositoryTest
         var list = await repository.ListarPasesAlumnos(25328051050581);
         int cantidadPasesEsparados = 2;
 
-
-
-
         int cantidadPasesObtenidos = list.Count;
-
-
-
 
         Assert.That(cantidadPasesEsparados == cantidadPasesObtenidos, $"se esperaban {cantidadPasesEsparados} registros y se obtuvieron {cantidadPasesObtenidos} de la base de datos");
     }
+    
 }
