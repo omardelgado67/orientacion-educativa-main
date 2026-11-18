@@ -64,5 +64,65 @@ public class PaseSalidaRepositoryTest
 
         Assert.That(cantidadPasesEsparados == cantidadPasesObtenidos, $"se esperaban {cantidadPasesEsparados} registros y se obtuvieron {cantidadPasesObtenidos} de la base de datos");
     }
-    
+     [Test]
+    public async Task ObtenerPase()
+    {
+        var repository = this.serviceProvider.GetRequiredService<PasesSalidaRepository>();
+        ObjectId id = ObjectId.Parse("6af5e54c47a58b307fec9cc0");
+        var pase = await repository.Consultar(id);
+        Assert.That(pase is not null, "no se encontro el pase con el ID proporcionado");
+    }
+
+
+
+
+    [Test]
+    public async Task Insertar()
+    {
+        var repository = this.serviceProvider.GetRequiredService<PasesSalidaRepository>();
+        PaseSalida pase = new PaseSalida();
+        pase.carrera = "Electronica";
+        pase.fecha = new DateTime(2026, 11, 1, 9, 15, 0);
+        pase.grupo = "E";
+        pase.motivo = "cuestiones familiares";
+        pase.nombreTutor = "Sr. Juan Perez";
+        pase.numControl = 24328051052222;
+        pase.parentesco = "padre";
+        pase.semestre = 1;
+        pase.telefono = "8331234567";
+
+
+
+
+        await repository.Insertar(pase);
+    }
+    [Test]
+    public async Task Modificar()
+    {
+        var repository = this.serviceProvider.GetRequiredService<PasesSalidaRepository>();
+        PaseSalidaModificar pase = new PaseSalidaModificar();
+        pase.Id = ObjectId.Parse("6afc65759d361b4506dd72dc");
+        pase.fecha = new DateTime(2026, 10, 30, 9, 15, 0);
+        pase.motivo = "cuestiones familiares";
+        pase.nombreTutor = "Sr. Juan Perez";
+        pase.parentesco = "padre";
+        pase.telefono = "8331234587";
+        pase.comentarios = " el padre comento que saldrian de viaje por las festividades de dia de muertos";
+        await repository.Modificar(pase);
+    }
+
+
+
+
+    [Test]
+    public async Task Eliminar()
+    {
+         var repository = this.serviceProvider.GetRequiredService<PasesSalidaRepository>();
+         ObjectId id = ObjectId.Parse("6afc65759d361b4506dd72dc");
+
+
+
+
+         await repository.Eliminar(id);
+    }
 }
