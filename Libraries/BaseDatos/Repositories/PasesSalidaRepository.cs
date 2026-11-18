@@ -58,7 +58,7 @@ e) Consultar los pases de un alumno
       return pase;
     }
         
-      public async Task<List<PaseSalida>> ListarPasesAlumno(long numControl)
+      public async Task<List<PaseSalida>> ListarPasesAlumnos(long numControl)
     {
          var respuesta =await this.pases.FindAsync(x => x.numControl == numControl);
       var pases = await respuesta.ToListAsync();
