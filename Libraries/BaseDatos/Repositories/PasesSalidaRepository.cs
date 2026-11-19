@@ -31,7 +31,7 @@ e) Consultar los pases de un alumno
     }
 
 
-    public async Task Modificar(PaseSalida item)
+    public async Task Modificar(PaseSalidaModificar item)
     {
         await this.pases.UpdateOneAsync(
             x => x.Id == item.Id,

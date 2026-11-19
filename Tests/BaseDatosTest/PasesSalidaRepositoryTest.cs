@@ -73,9 +73,6 @@ public class PaseSalidaRepositoryTest
         Assert.That(pase is not null, "no se encontro el pase con el ID proporcionado");
     }
 
-
-
-
     [Test]
     public async Task Insertar()
     {
@@ -91,37 +88,30 @@ public class PaseSalidaRepositoryTest
         pase.semestre = 1;
         pase.telefono = "8331234567";
 
-
-
-
         await repository.Insertar(pase);
     }
+
     [Test]
     public async Task Modificar()
     {
         var repository = this.serviceProvider.GetRequiredService<PasesSalidaRepository>();
         PaseSalidaModificar pase = new PaseSalidaModificar();
-        pase.Id = ObjectId.Parse("6afc65759d361b4506dd72dc");
+        pase.Id = ObjectId.Parse("6afc65ae82ad27e3fc66b766");
         pase.fecha = new DateTime(2026, 10, 30, 9, 15, 0);
         pase.motivo = "cuestiones familiares";
         pase.nombreTutor = "Sr. Juan Perez";
         pase.parentesco = "padre";
         pase.telefono = "8331234587";
         pase.comentarios = " el padre comento que saldrian de viaje por las festividades de dia de muertos";
+
         await repository.Modificar(pase);
     }
 
-
-
-
-    [Test]
+     [Test]
     public async Task Eliminar()
     {
          var repository = this.serviceProvider.GetRequiredService<PasesSalidaRepository>();
-         ObjectId id = ObjectId.Parse("6afc65759d361b4506dd72dc");
-
-
-
+         ObjectId id = ObjectId.Parse("6afc65ae82ad27e3fc66b766");
 
          await repository.Eliminar(id);
     }
